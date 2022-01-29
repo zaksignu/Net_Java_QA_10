@@ -22,7 +22,7 @@ class RadioTest {
     }
 
     @ParameterizedTest
-    // проверяем переключение номера станции yfpfl с обычными и граничными вариантами
+    // проверяем переключение номера станции назад с обычными и граничными вариантами
     @CsvSource(value = {
             "'normalMode',3 , 2",
             "'maxValue', 0 , 9",
@@ -50,7 +50,7 @@ class RadioTest {
 
 
     @ParameterizedTest
-    // проверяем увеличение громкости станции при различных состониях
+    // проверяем увеличение громкости станции при различных состояниях
     @CsvSource(value = {
             "'normalMode',5 , 6",
             "'outOfRangeFromLeft', 0, 1",
@@ -63,7 +63,7 @@ class RadioTest {
     }
 
     @ParameterizedTest
-    // проверяем уменьшение громкости станции при различных состониях
+    // проверяем уменьшение громкости станции при различных состояниях
     @CsvSource(value = {
             "'normalMode',5 , 4",
             "'outOfRangeFromLeft', 0, 0",

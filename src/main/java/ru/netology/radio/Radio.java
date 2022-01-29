@@ -9,12 +9,13 @@ public class Radio {
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
-
-        if ((currentRadioStation >= 0) && (currentRadioStation <= 9)) {        // Проверяем попадание в заданные пределы по колличеству станций, если да то устанавливаем номер  станции и выходим
+        // Проверяем попадание в заданные пределы по колличеству станций, если да то устанавливаем номер  станции и выходим
+        if ((currentRadioStation >= 0) && (currentRadioStation <= 9)) {
             this.currentRadioStation = currentRadioStation;
             return;
         }
-        if (currentRadioStation < 0) {         //Если дошли сюда,значит уже точно не норма. Проверяем номер и соответственно ставим либо станцию 0 либо 9
+        //Если дошли сюда,значит currentRadioStation точно не в допуске. Проверяем и соответственно ставим либо 0 либо 9
+        if (currentRadioStation < 0) {
             this.currentRadioStation = 0;
             return;
         } else {
@@ -23,6 +24,8 @@ public class Radio {
     }
 
     public void next() {
+        // Т.к. единственное место, откуда может появиться некорректное значение обеспечено методом setCurrentRadioStation,
+        // то просто обойдемся отработкой граничного значения или инкрементом currentRadioStation
         if (currentRadioStation == 9) {
             currentRadioStation = 0;
             return;
@@ -32,6 +35,8 @@ public class Radio {
     }
 
     public void prev() {
+        // Т.к. единственное место, откуда может появиться некорректное значение обеспечено методом setCurrentRadioStation,
+        // то просто обойдемся отработкой граничного значения или декрементом currentRadioStation
         if (currentRadioStation == 0) {
             currentRadioStation = 9;
             return;
@@ -65,6 +70,7 @@ public class Radio {
     }
 
     public void setVolumeLevel(int volumeLevel) {
+        // Служебный метод для тестов. Проверок нет, потому,что подразумевается,что значения задаются руками и всегда в допуске
         this.volumeLevel = volumeLevel;
     }
 }
