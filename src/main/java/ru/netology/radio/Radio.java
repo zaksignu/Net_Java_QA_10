@@ -17,7 +17,6 @@ public class Radio {
         //Если дошли сюда,значит currentRadioStation точно не в допуске. Проверяем и соответственно ставим либо 0 либо 9
         if (currentRadioStation < 0) {
             this.currentRadioStation = 0;
-            return;
         } else {
             this.currentRadioStation = 9;
         }
@@ -28,7 +27,6 @@ public class Radio {
         // то просто обойдемся отработкой граничного значения или инкрементом currentRadioStation
         if (currentRadioStation == 9) {
             currentRadioStation = 0;
-            return;
         } else {
             currentRadioStation++;
         }
@@ -39,7 +37,6 @@ public class Radio {
         // то просто обойдемся отработкой граничного значения или декрементом currentRadioStation
         if (currentRadioStation == 0) {
             currentRadioStation = 9;
-            return;
         } else {
             currentRadioStation--;
         }
@@ -50,7 +47,6 @@ public class Radio {
     public void increaseVolume() {
         if (volumeLevel < 10) {
             volumeLevel++;
-            return;
         } else {
             volumeLevel = 10;
         }
@@ -59,7 +55,6 @@ public class Radio {
     public void decreaseVolume() {
         if (volumeLevel > 0) {
             volumeLevel--;
-            return;
         } else {
             volumeLevel = 0;
         }
