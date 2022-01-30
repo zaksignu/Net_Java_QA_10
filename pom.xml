@@ -18,10 +18,9 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
-            <version>5.8.2</version>
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
     <build>
         <plugins>
@@ -37,7 +36,6 @@
                 <executions>
                     <execution>
                         <id>prepare-agent-ups</id>
-                        <phase>initialize</phase>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
@@ -50,14 +48,13 @@
                         </goals>
                     </execution>
                     <execution>
-                        <id>default-check_ups</id>
+                        <id>check</id>
                         <goals>
                             <goal>check</goal>
                         </goals>
                         <configuration>
                             <rules>
                                 <rule>
-                                    <element>CLASS</element>
                                     <limits>
                                         <limit>
                                             <counter>BRANCH</counter>
