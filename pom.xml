@@ -42,9 +42,9 @@
                     </execution>
                     <execution>
                         <id>report_ups</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>report</goal>
-
                         </goals>
                     </execution>
                     <execution>
