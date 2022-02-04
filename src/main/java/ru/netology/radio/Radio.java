@@ -7,7 +7,7 @@ public class Radio {
     private int maxVolumeLevel;
     private int minVolumeLevel;
 
-    public Radio(){
+    public Radio() {
         maxStationCount = 10;
         volumeLevel = 5;
         currentRadioStation = 5;
@@ -21,11 +21,8 @@ public class Radio {
         this.currentRadioStation = 0;
         this.maxVolumeLevel = 100;
         this.minVolumeLevel = 0;
-        if (maxStationCount>0) {
-            this.maxStationCount = maxStationCount;
-        } else {
-            this.maxStationCount = 3;
-        }
+        this.maxStationCount = maxStationCount;
+
     }
 
 
@@ -61,7 +58,7 @@ public class Radio {
         // Т.к. единственное место, откуда может появиться некорректное значение обеспечено методом setCurrentRadioStation,
         // то просто обойдемся отработкой граничного значения или декрементом currentRadioStation
         if (currentRadioStation == 0) {
-            currentRadioStation = ( maxStationCount - 1);
+            currentRadioStation = (maxStationCount - 1);
         } else {
             currentRadioStation--;
         }

@@ -9,29 +9,30 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioTest {
 
     @ParameterizedTest
-    // проверяем переключение номера станции вперед с обычными и граничными вариантами
+    // проверяем переключение номера станции вперед с обычными и граничными вариантами c указанным максимумом станций
     @CsvSource(value = {
-            "'normalMode',3 , 4",
-            "'maxValue', 9 , 0",
-            "'minValue', 0 , 1"})
-    void next(String name, int radioStationNumber, int expectedRadioStationNumber) {
-        Radio rad = new Radio();
+            "'normalMode',3 , 4, 20",
+            "'maxValue', 19 , 0, 20",
+            "'minValue', 0 , 1, 20"})
+    void next(String name, int radioStationNumber, int expectedRadioStationNumber, int maxRadioStation) {
+        Radio rad = new Radio(maxRadioStation);
         rad.setCurrentRadioStation(radioStationNumber);
         rad.next();
         assertEquals(expectedRadioStationNumber, rad.getCurrentRadioStation());
     }
 
     @ParameterizedTest
-    // проверяем переключение номера станции назад с обычными и граничными вариантами
+    // проверяем переключение номера станции назад с обычными и граничными вариантами c указанным максимумом станций
     @CsvSource(value = {
-            "'normalMode',3 , 2",
-            "'maxValue', 0 , 9",
-            "'minValue', 9 , 8"})
-    void prev(String name, int radioStationNumber, int expectedRadioStationNumber) {
-        Radio rad = new Radio();
+            "'normalMode',3 , 2, 20",
+            "'maxValue', 0 , 19, 20",
+            "'minValue', 19 , 18, 20"})
+    void prev(String name, int radioStationNumber, int expectedRadioStationNumber, int maxRadioStation) {
+        Radio rad = new Radio(maxRadioStation);
         rad.setCurrentRadioStation(radioStationNumber);
         rad.prev();
         assertEquals(expectedRadioStationNumber, rad.getCurrentRadioStation());
+
     }
 
 
