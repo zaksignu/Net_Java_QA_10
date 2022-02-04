@@ -3,6 +3,10 @@ package ru.netology.radio;
 public class Radio {
     private int currentRadioStation;
     private int volumeLevel;
+    private int maxStationCount;
+
+
+
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -10,7 +14,7 @@ public class Radio {
 
     public void setCurrentRadioStation(int currentRadioStation) {
         // Проверяем попадание в заданные пределы по колличеству станций, если да то устанавливаем номер  станции и выходим
-        if ((currentRadioStation >= 0) && (currentRadioStation <= 9)) {
+        if ((currentRadioStation >= 0) && (currentRadioStation <= (maxStationCount - 1))) {
             this.currentRadioStation = currentRadioStation;
             return;
         }
@@ -25,7 +29,7 @@ public class Radio {
     public void next() {
         // Т.к. единственное место, откуда может появиться некорректное значение обеспечено методом setCurrentRadioStation,
         // то просто обойдемся отработкой граничного значения или инкрементом currentRadioStation
-        if (currentRadioStation == 9) {
+        if (currentRadioStation == (maxStationCount - 1)) {
             currentRadioStation = 0;
         } else {
             currentRadioStation++;
@@ -36,7 +40,7 @@ public class Radio {
         // Т.к. единственное место, откуда может появиться некорректное значение обеспечено методом setCurrentRadioStation,
         // то просто обойдемся отработкой граничного значения или декрементом currentRadioStation
         if (currentRadioStation == 0) {
-            currentRadioStation = 9;
+            currentRadioStation = ( maxStationCount - 1);
         } else {
             currentRadioStation--;
         }
