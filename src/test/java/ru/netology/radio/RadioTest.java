@@ -54,7 +54,7 @@ class RadioTest {
     @CsvSource(value = {
             "'normalMode',5 , 6",
             "'outOfRangeFromLeft', 0, 1",
-            "'outOfRangeFromRight', 10 , 10"})
+            "'outOfRangeFromRight', 100 , 100"})
     void increaseVolume(String name, int currentVolume, int expectedVolume) {
         Radio rad = new Radio();
         rad.setVolumeLevel(currentVolume);
@@ -70,6 +70,7 @@ class RadioTest {
             "'outOfRangeFromRight', 10 , 9"})
     void decreaseVolume(String name, int currentVolume, int expectedVolume) {
         Radio rad = new Radio();
+
         rad.setVolumeLevel(currentVolume);
         rad.decreaseVolume();
         assertEquals(expectedVolume, rad.getVolumeLevel());
