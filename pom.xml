@@ -21,6 +21,12 @@
             <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -42,9 +48,9 @@
                     </execution>
                     <execution>
                         <id>report_ups</id>
+                        <phase>package</phase>
                         <goals>
                             <goal>report</goal>
-
                         </goals>
                     </execution>
                     <execution>
