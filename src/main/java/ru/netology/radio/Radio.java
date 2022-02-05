@@ -1,11 +1,17 @@
 package ru.netology.radio;
 
+
+import lombok.*;
+
+@AllArgsConstructor
 public class Radio {
-    private int currentRadioStation;
-    private int volumeLevel;
-    private int maxStationCount;
-    private int maxVolumeLevel;
-    private int minVolumeLevel;
+
+    @Getter private  int currentRadioStation = 10;
+    @Getter @Setter private int volumeLevel =10;
+    @Getter @Setter private int maxStationCount = 10;
+    private int maxVolumeLevel =10;
+    private int minVolumeLevel =10;
+
 
     public Radio() {
         maxStationCount = 10;
@@ -13,21 +19,6 @@ public class Radio {
         currentRadioStation = 5;
         maxVolumeLevel = 100;
         minVolumeLevel = 0;
-    }
-
-
-    public Radio(int maxStationCount) {
-        this.volumeLevel = 5;
-        this.currentRadioStation = 0;
-        this.maxVolumeLevel = 100;
-        this.minVolumeLevel = 0;
-        this.maxStationCount = maxStationCount;
-
-    }
-
-
-    public int getCurrentRadioStation() {
-        return currentRadioStation;
     }
 
     public void setCurrentRadioStation(int currentRadioStation) {
@@ -82,12 +73,4 @@ public class Radio {
         }
     }
 
-    public int getVolumeLevel() {
-        return volumeLevel;
-    }
-
-    public void setVolumeLevel(int volumeLevel) {
-        // Служебный метод для тестов. Проверок нет, потому,что подразумевается,что значения задаются руками и всегда в допуске
-        this.volumeLevel = volumeLevel;
-    }
 }
