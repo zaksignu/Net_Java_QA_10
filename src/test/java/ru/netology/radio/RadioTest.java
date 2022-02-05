@@ -1,7 +1,5 @@
 package ru.netology.radio;
 
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -16,11 +14,10 @@ class RadioTest {
             "'normalMode',3 , 4, 20, 5, 5, 10, 100, 0",
             "'maxValue', 19 , 0, 20, 5, 5, 10, 100, 0",
             "'minValue', 0 , 1, 20, 5, 5, 10, 100, 0"})
-
     void next(String name, int radioStationNumber, int expectedRadioStationNumber,
-              int maxRadioStation, int currentRadioStation ,int volumeLevel, int maxStationCount,
-              int maxVolumeLevel, int minVolume ) {
-        Radio rad = new Radio(currentRadioStation, volumeLevel, maxStationCount,maxVolumeLevel,minVolume );
+              int maxRadioStation, int currentRadioStation, int volumeLevel, int maxStationCount,
+              int maxVolumeLevel, int minVolume) {
+        Radio rad = new Radio(currentRadioStation, volumeLevel, maxStationCount, maxVolumeLevel, minVolume);
         rad.setMaxStationCount(maxRadioStation);
         rad.setCurrentRadioStation(radioStationNumber);
         rad.next();
@@ -35,9 +32,9 @@ class RadioTest {
             "'maxValue', 0 , 19, 20, 5, 5, 20, 100, 0",
             "'minValue', 19 , 18, 20, 5, 5, 20, 100, 0"})
     void prev(String name, int radioStationNumber, int expectedRadioStationNumber, int maxRadioStation,
-              int currentRadioStation ,int volumeLevel, int maxStationCount,
-              int maxVolumeLevel, int minVolume ) {
-        Radio rad = new Radio(currentRadioStation, volumeLevel, maxStationCount,maxVolumeLevel,minVolume );
+              int currentRadioStation, int volumeLevel, int maxStationCount,
+              int maxVolumeLevel, int minVolume) {
+        Radio rad = new Radio(currentRadioStation, volumeLevel, maxStationCount, maxVolumeLevel, minVolume);
         rad.setMaxStationCount(maxRadioStation);
         rad.setCurrentRadioStation(radioStationNumber);
         rad.prev();

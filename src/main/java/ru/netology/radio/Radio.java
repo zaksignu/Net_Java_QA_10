@@ -6,9 +6,14 @@ import lombok.*;
 @AllArgsConstructor
 public class Radio {
 
-    @Getter private  int currentRadioStation;
-    @Getter @Setter private int volumeLevel;
-    @Getter @Setter private int maxStationCount;
+    @Getter
+    private int currentRadioStation;
+    @Getter
+    @Setter
+    private int volumeLevel;
+    @Getter
+    @Setter
+    private int maxStationCount;
     private int maxVolumeLevel;
     private int minVolumeLevel;
 
